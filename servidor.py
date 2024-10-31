@@ -53,7 +53,7 @@ def entrar(nome, senha, conn, ender):
     cliente = next((cliente for cliente in clientes if cliente["nome"] == nome and cliente["senha"] == senha), False)
     if(cliente):
       conn.sendto(str.encode('Logado com sucesso!'), ender)
-      broadcast(f'Servidor: {cliente['nome']} entrou no chat!')
+      broadcast(f'Servidor: {cliente["nome"]} entrou no chat!')
       return cliente
     else:
       conn.sendto(str.encode('Usuario nao cadastrado!'), ender)
@@ -102,12 +102,12 @@ Comandos disponiveis:
       if(mensagem == "/sair"):
         conn.sendto(str.encode('Você saiu do chat'), ender)
 
-        broadcast(f'Servidor: {logado['nome']} {'Saiu do Chat.'}')
+        broadcast(f'Servidor: {logado["nome"]} Saiu do Chat.')
         break
       if(mensagem[:3] == "/pv"):
         unicast(mensagem[3:].lstrip(), ender)
       else:
-        broadcast(f'{logado['nome']}: {mensagem}', ender)
+        broadcast(f'{logado["nome"]}: {mensagem}', ender)
     
     else:
       mensagemArray = mensagem.split()
@@ -147,8 +147,3 @@ while True:
   except:
     print("Falha ao se conectar... tente novamente")
     continue
-
-
-
-
-
