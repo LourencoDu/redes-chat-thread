@@ -22,8 +22,7 @@ Para iniciar o servidor é necessário executar o seguinte comando no prompt:
   py servidor.py
 ```
 
-Para iniciar o servidor é necessário executar o seguinte comando no prompt:
-Para iniciar o cliente
+Para iniciar o cliente é necessário executar o seguinte comando no prompt:
 ```bash
   py cliente.py
 ```
